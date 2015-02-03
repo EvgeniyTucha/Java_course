@@ -1,23 +1,32 @@
 package com.my.shevchenko.Task1;
 
+import java.util.ArrayList;
+
 public class Subtask7 {
 
 	public static void main(String[] args) {
-		int sum=0;
-		int [] lst = new int [2000000];
-		for(int i = 2; i<2000000; i++)
-		{
-			for( int j=2; j<2000000; j++)
-			{
-				if(i%j == 0)
-					break;
-				else{
-					lst[i]=i;
-					sum+=i;
-				}
-			}	
-		}
-		System.out.println(sum);
+		primeNumbers();
+
 	}
 
+	private static boolean isPrime(int num) {
+		for (int i = 2; i < num; i++) {
+			if (num % i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private static void primeNumbers() {
+		int num = 2;
+		ArrayList<Integer> primesNumbers = new ArrayList<Integer>();
+		while (primesNumbers.size() < 10001) {
+			if (isPrime(num)) {
+				primesNumbers.add(num);
+			}
+			num++;
+		}
+		System.out.println(primesNumbers.get(10000));
+	}
 }

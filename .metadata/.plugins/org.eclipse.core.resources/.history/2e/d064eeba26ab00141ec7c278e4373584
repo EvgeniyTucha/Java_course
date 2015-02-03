@@ -1,0 +1,33 @@
+package com.my.shevchenko.Task1;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Subtask4 {
+
+	public static void main(String[] args) {
+		palindrome();
+	}
+
+	public static boolean isPalindrome(String number) {
+		String reverseNumber = new StringBuilder(number).reverse().toString();
+		if (number.equals(reverseNumber)) {
+			return true;
+		}
+		return false;
+	}
+
+	public static void palindrome() {
+		ArrayList<Integer> palindromeList = new ArrayList<Integer>();
+		int result = 0;
+		for (int i = 100; i < 1000; i++) {
+			for (int j = 100; j < 1000; j++) {
+				result = i * j;
+				if (isPalindrome(String.valueOf(result))) {
+					palindromeList.add(result);
+				}
+			}
+			System.out.println("Largest palindrom of 3-digit number is : "+ Collections.max(palindromeList));
+		}
+	}
+}
