@@ -1,24 +1,24 @@
 package com.my.Shevchenko.Task2;
 
 abstract class Animals {
-	void Walk() {
+	void walk() {
 	}
 
-	void Eat() {
+	void eat() {
 	}
 }
 
 class Predator extends Animals {
-	int Hunt() {
+	int hunt() {
 		return 0;
 	}
 
-	int Reproduction() {
+	int reproduction() {
 		return 0;
 	}
 }
 
-class Tiger {
+class tiger {
 	void Color() {
 
 	}
